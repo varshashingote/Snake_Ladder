@@ -9,7 +9,13 @@ namespace Snake_Ladder
 {
     internal class Program
     {
+          public const int SNAKE = 2;
+          public const int LADDER = 1;
+          public const int NOPLYER = 0;
+         
+
         static void Main(string[] args)
+        
         {
             int PlayerPosition = 0;
             int start = 0;
@@ -19,18 +25,20 @@ namespace Snake_Ladder
                 Random random = new Random();
                 int roll = random.Next(0, 7);
                 Console.WriteLine("After Rolling a dice" + roll);
+                ++roll;
                 int Option = random.Next(0, 3);
                 Console.WriteLine("Option is " + Option);
                 Console.ReadLine();
-                if (Option == 0)
+                if (Option == SNAKE)
                 {
                     PlayerPosition = PlayerPosition - roll;
                     Console.WriteLine("snake " + PlayerPosition);
                 }
-                else if (Option == 1)
+                else if (Option == LADDER  && (PlayerPosition+roll) < 100)
                 {
                     PlayerPosition = PlayerPosition + roll;
-                    Console.WriteLine("ladder " + PlayerPosition);
+                    Console.WriteLine("ladder "+ PlayerPosition);
+
                 }
                 else
                 {
@@ -40,12 +48,16 @@ namespace Snake_Ladder
                 { 
                     PlayerPosition = PlayerPosition + roll; 
                 }
-                else if (PlayerPosition < 0)
+                 if (PlayerPosition <= 0)
                 {
                     PlayerPosition = PlayerPosition  - roll;
+                    Console.WriteLine("Player Position"+PlayerPosition );
+                    Console.WriteLine("Dice Count "+roll);
                 }
                 else if (PlayerPosition == 100)
-                { Console.WriteLine("player has won");
+                { 
+                    Console.WriteLine("player has won");
+                    Console.ReadLine();
                     break; 
                 }
 
