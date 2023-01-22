@@ -36,6 +36,19 @@ namespace Snake_Ladder
                 {
                     Console.WriteLine("no play " + PlayerPosition);
                 }
+                 if (PlayerPosition <= 100) 
+                { 
+                    PlayerPosition = PlayerPosition + roll; 
+                }
+                else if (PlayerPosition < 0)
+                {
+                    PlayerPosition = PlayerPosition  - roll;
+                }
+                else if (PlayerPosition == 100)
+                { Console.WriteLine("player has won");
+                    break; 
+                }
+
                 Console.ReadLine();
             }
         }
