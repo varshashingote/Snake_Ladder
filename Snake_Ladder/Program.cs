@@ -60,6 +60,8 @@ namespace Snake_Ladder
                     Console.ReadLine();
                     break; 
                 }
+                 int TotalDiceCount += roll;
+                Console.ReadLine("Total Dice Count Played to win the game:"+totalDiceCount); 
 
                 Console.ReadLine();
             }
