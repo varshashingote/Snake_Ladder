@@ -42,8 +42,8 @@ namespace Snake_Ladder
             return position;
 
         }
-        public static void main(String[] args)
-        {
+            static void Main(String[] args)
+            {
             int playerOnePosition = 0;
             int playerTwoPosition = 0;
             int player = Player1;
@@ -67,6 +67,7 @@ namespace Snake_Ladder
                     if ((optionCheck == SNAKE) || (optionCheck == NOPLYER))
                     {
                         player = Player2;
+                        Console.WirteLine("player is:"+player);
                     }
                 }
                 else if (player == Player2)
@@ -75,6 +76,7 @@ namespace Snake_Ladder
                     if ((optionCheck == SNAKE) || (optionCheck == NOPLYER))
                     {
                         player = Player1;
+                        Console.WriteLine("player is"+player);
                     }
                 }
 
@@ -91,6 +93,7 @@ namespace Snake_Ladder
             {
                 Console.WriteLine("Player Two Wins");
             }
+                Console.ReadLine();
 
         }
     }
